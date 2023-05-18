@@ -16,183 +16,58 @@ $(document).ready(function(){
 		});
 		return false;
 	});
-    /*$('.carousel__inner').slick({
-        speed: 1200,
-        //adaptiveHeight: true,
-        prevArrow: '<button type="button" class="slick-prev"><img src="icons/left.svg"></button>',
-        nextArrow: '<button type="button" class="slick-next"><img src="icons/right.svg"></button>',
-        responsive: [
-            {
-              breakpoint: 992,//будет работать от 0 до 992 px
-              settings: {
-                dots: true,
-               arrows: false
-              }
-            }
-          ]
-      });
-  });
-
-  const slider = tns({
-    container: '.carousel__inner',
-    items: 1,
-    slideBy: 'page',
-    autoplay: false,
-    controls: false,
-    nav: false,
-    responsive: {
-      300: {
-        nav: true,
-        items: 1,
-        edgePadding: 10,
-        gutter: 20
-      },
-      640: {
-        edgePadding: 20,
-        gutter: 20,
-        items: 1,
-        nav: true,
-      },
-      700: {
-        gutter: 30,
-        nav: true
-      },
-      1024: {
-        items: 1,
-        nav: true
-      }
-    }
-  });
-
-  document.querySelector('.prev').addEventListener('click', function () {
-    slider.goTo('prev');
-  });
-
-  document.querySelector('.next').addEventListener('click', function () {
-    slider.goTo('next');
-  });
-
-  $('ul.catalog__tabs').on('click', 'li:not(.catalog__tab_active)', function() {
-    $(this)
-      .addClass('catalog__tab_active').siblings().removeClass('catalog__tab_active')
-      .closest('div.container').find('div.catalog__content').removeClass('catalog__tab_active').eq($(this).index()).addClass('catalog__tab_active');
-  });
-});*/
-
-/*$(document).ready(function(){
-  const slider = tns({
-    container: '.carousel__inner',
-    items: 1,
-    slideBy: 'page',
-    autoplay: false,
-    controls: false,
-    nav: false,
-    responsive: {
-      300: {
-        nav: true,
-        items: 1,
-        edgePadding: 10,
-        gutter: 20
-      },
-      640: {
-        edgePadding: 20,
-        gutter: 20,
-        items: 1,
-        nav: true,
-      },
-      700: {
-        gutter: 30,
-        nav: true
-      },
-      1024: {
-        items: 1,
-        nav: true
-      }
-    }
-  });
-
-  document.querySelector('.prev').addEventListener('click', function () {
-    slider.goTo('prev');
-  });
-
-  document.querySelector('.next').addEventListener('click', function () {
-    slider.goTo('next');
-  });
-
-  $('ul.catalog__tabs').on('click', 'li:not(.catalog__tab_active)', function() {
-      $(this)
-        .addClass('catalog__tab_active').siblings().removeClass('catalog__tab_active')
-        .closest('div.container').find('div.catalog__content').removeClass('catalog__content_active').eq($(this).index()).addClass('catalog__content_active');
-  });
-
-  function toggleSlide(item) {
-      $(item).each(function(i) {
-          $(this).on('click', function(e) {
-              e.preventDefault();
-              $('.catalog-item__content').eq(i).toggleClass('catalog-item__content_active');
-              $('.catalog-item__list').eq(i).toggleClass('catalog-item__list_active');
-          })
-      });
-  };
-
-  toggleSlide('.catalog-item__link');
-  toggleSlide('.catalog-item__back');
-*/
-
+   
   //Slider
 
-  let slideIndex = 1,  //Индекс слайда
-	// получаем элементы со страницы
-	slides = document.querySelectorAll('.slider-item'), //<div> с фото
-	prev = document.querySelector('.prev'), //назад
-	next = document.querySelector('.next'),//вперед
-	dotsWrap = document.querySelector('.slider-dots'),//div с точками
-	dots = document.querySelectorAll('.dot'); //точки
+  let slideIndex = 1,  
 
-	showSlides(slideIndex); //вызываем функцию, которая перелистывает слайдер
+	slides = document.querySelectorAll('.slider-item'), 
+	prev = document.querySelector('.prev'),
+	next = document.querySelector('.next'),
+	dotsWrap = document.querySelector('.slider-dots'),
+	dots = document.querySelectorAll('.dot'); 
 
-	function showSlides() { //функция, показывающая и скрывающая слайды и точки
+	showSlides(slideIndex); 
 
-			if (slideIndex > slides.length) { //если мы дошли до последнего слайда
-				slideIndex = 1; //показываем первый слайд
+	function showSlides() { 
+
+			if (slideIndex > slides.length) { 
+				slideIndex = 1; 
 			}
-			if (slideIndex < 1) { //если мы на первом слайде нажимаем стрелку "назад"
-				slideIndex = slides.length; //показываем последний слайд
+			if (slideIndex < 1) { 
+				slideIndex = slides.length; 
 			}
 
-		slides.forEach((item) => item.style.display = 'none'); //скрываем все слайды
-		dots.forEach((item) => item.classList.remove('dot-active')); //скрываем точки
+		slides.forEach((item) => item.style.display = 'none'); 
+		dots.forEach((item) => item.classList.remove('dot-active')); 
 
-		slides[slideIndex - 1].style.display = 'block';  //показываем первый слайд (slideIndex = 0). Изначально slideIndex = 1, поэтому уменьшаем на единицу
-		dots[slideIndex - 1].classList.add('dot-active'); //показываем первую точку
+		slides[slideIndex - 1].style.display = 'block';  
+		dots[slideIndex - 1].classList.add('dot-active'); 
 	}
 
-	//функция, показывающая следующий слайд
+
 	function plusSlides() {
-		slideIndex ++; //увеличиваем slideIndex на единицу
-		showSlides();//запускаем функцию showSlides
+		slideIndex ++; 
+		showSlides();
 	}
 
-	//показываем предыдущий слайд по клику "назад" по событию click
+
 	prev.addEventListener('click', function() {
-		slideIndex -= 2; //уменьшаем slideIndex на 2 единицы (одна единица компенсирует slideIndex++ в функции plusSlides)
-		plusSlides(); //запускаем функцию plusSlides
+		slideIndex -= 2; 
+		plusSlides(); 
 	});
 
-	//показываем следующий слайд по клику "вперед" по событию click
+
 	next.addEventListener('click', function() {
 		plusSlides(1);
 	});
 
-	//делегируем событие click обертке точек; показываем слайд, который соответствует нажатой точке
 	dotsWrap.addEventListener('click', function(event) {
 		for (let i = 0; i < dots.length + 1; i++) {
-		//i < dots.length + 1, потому что нам нужно сделать дополнительный проход цикла (если нажата седьмая точка, то i = 6, и проход цикла закончится
-			
-				//проверяем, что пользователь кликнул именно на точку (event.target имеет класс .dot) и нажата соответствующая точка
+
 			if (event.target.classList.contains('dot') && event.target == dots[i-1]) {
 				slideIndex = i;
-				showSlides(); //показываем соответствующий слайд (i)
+				showSlides(); 
 			}
 		}
 	});
@@ -213,28 +88,7 @@ $('.button_mini').each(function(i) {
     });
 });
 
-  /*$('#consultation-form').validate();
-  $('#consultation form').validate({
-    rules: {
-      name: "required",
-      phone: "required",
-      email: {
-        required: true,
-        email: true
-      }
-    },
-    messages: {
-      name: {
-        required: "Пожалуйста, введите свое имя",
-        minlength: jQuery.validator.format("Введите  {0} символов")
-      },
-      email: {
-        required: "We need your email address to contact you",
-        email: "Your email address must be in format of name@domain"
-      }
-    }
-  });
-  $('#order form').validate();*/
+  
 
   function valideForms(form){
     $('form').validate({
@@ -265,26 +119,7 @@ $('.button_mini').each(function(i) {
 
   $('input[name=phone]').mask("(+7) 999 99 99");
 
-  /*$('form').submit(function(e) {
-    e.preventDefault();
-
-    if(!(this).valid()) {
-      return;
-    }
-
-    $.ajax({
-      type: "POST",
-      url: "mailer/smart.php",
-      data: $(this).serialize()
-    }).done(function() {
-      $(this).find("input").val("");
-      $('#consultation, #order').fadeOut();
-      $('.overlay, #thanks').fadeIn(slow);
-      $('form').trigger('reset');
-    });
-    return false;
-  });*/
-
+ 
   //Smooth scrol and page up
   $(window).scroll(function() {
     if ($(this).scrollTop() > 1600) {
