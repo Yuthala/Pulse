@@ -1,16 +1,16 @@
 .slider {
-	width: 950px;
-	margin: 0 auto;
+	padding: 40px 0;
 }
 
 .wrap {
 	position: relative;
-	padding-top: 73px;
-	padding-bottom: 50px;
+	width: 100%;
+	max-height: 600px;
+	margin: 0 auto;
 }
 
 .slider__header {
-	margin-top: 73px;
+	margin: 73px 0;
 }
 
 .slider-item img {
@@ -31,7 +31,7 @@
 	}
 }
 
-.slider .wrap .prev {
+.prev {
 	position: absolute;
 	cursor: pointer;
 	top: 0;
@@ -43,15 +43,15 @@
 			transition: 0.3s;
   }
 
-.slider .wrap .prev:hover {
+.prev:hover {
 	background-color: rgba(0, 0, 0, 0.4);
   }
 
-.slider .wrap .prev:hover .arrow-left {
+.prev:hover .arrow-left {
 	opacity: 1;
   }
 
-.slider .wrap .prev .arrow-left {
+.arrow-left {
 	width: 50px;
 	height: 50px;
 	background: url(../src/img/left-arrow.svg) center no-repeat;
@@ -67,7 +67,7 @@
 			transition: 1s;
   }
 
-.slider .wrap .next {
+.next {
 	position: absolute;
 	cursor: pointer;
 	top: 0;
@@ -79,15 +79,15 @@
 	right: -10%;
   }
 
-.slider .wrap .next:hover {
+.next:hover {
 	background-color: rgba(0, 0, 0, 0.4);
   }
 
-.slider .wrap .next:hover .arrow-right {
+.next:hover .arrow-right {
 	opacity: 1;
   }
 
-.slider .wrap .next .arrow-right {
+.next .arrow-right {
 	width: 50px;
 	height: 50px;
 	background: url(../src/img/right-arrow.svg) center no-repeat;
