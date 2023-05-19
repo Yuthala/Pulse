@@ -1,10 +1,11 @@
 @media (max-width: 1150px) {
     .slider .wrap{
-        max-height: 400px;
+        max-height: 500px;
         max-width: 70%;
     }
     .wrap .slider-item img {
-        height: 400px;
+        height: 500px;
+        object-fit: contain;
     }
     .slider .wrap .prev, .slider .wrap .next { 
         width: 70px;
@@ -43,6 +44,9 @@
             width: 100%;
             text-align: center;
         }
+        form {
+            margin-top: 50px;
+        }
     }
     .title {
         &_left {
@@ -55,6 +59,12 @@
 }
 
 @media (max-width: 800px) {
+    .container {
+        width: 680px;
+    }
+    .title {
+        font-size: 24px;
+    }
     .header {
         padding-left: 20px;
         padding-right: 20px;
@@ -97,9 +107,45 @@
             font-size: 22px;
         }
     }
+
+    body .catalog {
+        padding-bottom: 50px;
+        padding-top: 40px;
+    }
+    .catalog .catalog__tabs {
+        margin-top: 40px;
+    }
+
+    .slider .wrap .prev, .slider .wrap .next { 
+        width: 50px;
+    }
+    .next .arrow-right {
+        width: 30px;
+        height: 30px;
+    }
+    .prev .arrow-left {
+        width: 30px;
+        height: 30px;
+    }
+    .wrap .slider-item img {
+        height: 500px;
+        object-fit: contain;
+        width: 90%;
+        display: block;
+        margin: 0 auto;
+    }
+    .slider .next {
+        right: -15%;
+    }
+    .slider .prev {
+        left: -15%;
+    }
 }
 
 @media (max-width: 700px) {
+    .container {
+        width: 540px;
+    }
     .header {
         &__logo {
             width: 140px;
@@ -127,6 +173,10 @@
             width: 80%;
         }
     }
+    .catalog .catalog-item {
+        width: 240px;
+        min-height: 180px;
+    }
     .title {
         &_left {
             width: 100%;
@@ -136,8 +186,17 @@
     .feed_form {
         width: 240px;
     }
+    .slider .slider__header {
+        margin: 20px 0;
+    }
+    .slider .slider-dots {
+        margin-bottom: 20px;
+    }
 }
 @media (max-width: 570px) {
+    .container {
+        width: 460px;
+    }
     .promo {
         min-height: 400px; 
         padding: 16px 0 25px;
@@ -178,16 +237,72 @@
             width: 360px;
         }
     }
-    .carousel {
-        .tns-outer {
-            img {
-                width: 380px;
-            }
-        }
+
+    .consultation {
+        min-height: 480px;
+        padding: 50px 0 40px 0;
+    }
+
+    .catalog .catalog__content {
+        justify-content: center;
+    }
+    .catalog .catalog-item {
+        width: 300px;
+        min-height: 180px;
+    }
+    .catalog .catalog__tab {
+        font-size: 14px;
+    }
+    .catalog .catalog__tabs {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .slider .wrap .slider-item img {
+        height: 400px;
     }
 }
 
-@media (max-width: 400px) and (min-width: 320px) {
+@media (max-width: 500px) {
+    .container {
+        width: 400px;
+    }
+    .catalog .catalog__tab {
+        font-size: 12px;
+    }
+    .feed .feed__item {
+        flex-direction: column;
+    }
+    .feed .feed__item img {
+        display: block;
+        margin: 0 auto;
+    }
+    .slider .wrap{
+        max-height: 400px;
+        max-width: 70%;
+    }
+    .slider .slider__header {
+        margin: 10px 0;
+    }
+    .slider .prev, .slider .next {
+        width: 40px;
+    }
+    .slider .next {
+        right: -20%;
+    }
+    .slider .prev {
+        left: -20%;
+    }
+}
+
+@media (max-width: 450px) {
+    .container {
+        width: 380px;
+    }
+}
+@media (max-width: 400px)    {
+    .container {
+        width: 300px;
+    }
     .header {
         &__phone {
             font-size: 10px;
@@ -230,6 +345,24 @@
     }
     .feed_form {
         width: 180px;
+    }
+    .footer .footer__info {
+        width: 100%;
+        height: 180px;
+        padding: 40px 28px 20px 28px;
+    }
+    .footer .footer__addr {
+        margin-bottom: 14px;
+        font-weight: 500;
+        font-size: 14px;
+    }
+    .footer .footer__phone {
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 14px;
+    }
+    .slider .wrap .slider-item img {
+        height: 300px;
     }
 }
 
