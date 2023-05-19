@@ -104,13 +104,26 @@
                 <div class="title slider__header">Большой выбор моделей</div>
                 <div class="wrap">
                     <div class="slider-item">
-                        <img src="img/slide_1.png" alt="slide_1">
+                        <picture>
+                            <source type="image/webp" srcset="img/slide_1.webp">
+                            <source media="(max-width: 576px)" srcset="img/slide_1-min.png">
+                            <source media="(min-width: 577px)" srcset="img/slide_1.png">
+                            <img src="img/slide_1.png" alt="slider_1">
+                        </picture>
                     </div>
                     <div class="slider-item">
-                        <img src="img/slide_2.png" alt="slide_2">
+                        <picture>
+                            <source media="(max-width: 576px)" srcset="img/slide_2-min.png">
+                            <source media="(min-width: 577px)" srcset="img/slide_2.jpeg">
+                            <img src="img/slide_2.png" alt="slider_2">
+                        </picture>
                     </div>
                     <div class="slider-item">
-                        <img src="img/slide_3.png" alt="slide_3">
+                        <picture>
+                            <source media="(max-width: 576px)" srcset="img/slide_3-min.png">
+                            <source media="(min-width: 577px)" srcset="img/slide_3.png">
+                            <img src="img/slide_3.png" alt="slider_3">
+                        </picture>
                     </div>
     
                     <div class="prev"><div class="arrow-left"></div></div>
